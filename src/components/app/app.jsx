@@ -1,5 +1,5 @@
 import React from "react";
-import MainScreen from '../main/main.jsx';
+import Main from '../main/main.jsx';
 
 const App = () => {
   const properties = [
@@ -20,7 +20,7 @@ const App = () => {
       caption: `Nice, cozy, warm big bed apartment`,
     },
   ];
-  return <MainScreen properties={properties} />;
+  return <Main properties={properties} />;
 };
 
 export default App;

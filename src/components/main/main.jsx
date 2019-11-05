@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-export default class MainScreen extends Component {
+export default class Main extends Component {
   render() {
     return <div className="page page--gray page--main">
       <header className="header">
@@ -86,7 +86,7 @@ export default class MainScreen extends Component {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                {this.properties}
+                {this.placeCards}
               </div>
             </section>
             <div className="cities__right-section">
@@ -99,7 +99,7 @@ export default class MainScreen extends Component {
   }
 
 
-  get properties() {
+  get placeCards() {
     return this.props.properties.map((item) => (
       <article className="cities__place-card place-card" key={item.id}>
         <div className="cities__image-wrapper place-card__image-wrapper">
@@ -136,7 +136,7 @@ export default class MainScreen extends Component {
   }
 }
 
-MainScreen.propTypes = {
+Main.propTypes = {
   properties: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
     caption: PropTypes.string.isRequired,
