@@ -100,7 +100,7 @@ export default class Main extends Component {
 
 
   get placeCards() {
-    return this.props.properties.map((item) => (
+    return this.props.placeCardsInfo.map((item) => (
       <article className="cities__place-card place-card" key={item.id}>
         <div className="cities__image-wrapper place-card__image-wrapper">
           <a href="#">
