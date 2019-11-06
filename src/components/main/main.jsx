@@ -137,7 +137,7 @@ export default class Main extends Component {
 }
 
 Main.propTypes = {
-  properties: PropTypes.arrayOf(PropTypes.shape({
+  placeCardsInfo: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
     caption: PropTypes.string.isRequired,
   })).isRequired
