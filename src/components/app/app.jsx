@@ -2,7 +2,7 @@ import React from "react";
 import Main from '../main/main.jsx';
 
 const App = () => {
-  const properties = [
+  const placeCardsInfo = [
     {
       id: `prop-1`,
       caption: `Beautiful & luxurious apartment at great location`,
@@ -20,7 +20,7 @@ const App = () => {
       caption: `Nice, cozy, warm big bed apartment`,
     },
   ];
-  return <Main properties={properties} />;
+  return <Main placeCardsInfo={placeCardsInfo} />;
 };
 
 export default App;
