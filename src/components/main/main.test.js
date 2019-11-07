@@ -1,7 +1,8 @@
-import React from "react";
-import Main from '../main/main.jsx';
+import React from 'react';
+import renderer from 'react-test-renderer';
+import Main from './main';
 
-const App = () => {
+it(`Main correctly renders after relaunch`, () => {
   const placeCardsInfo = [
     {
       id: `prop-1`,
@@ -16,16 +17,16 @@ const App = () => {
       caption: `Canal View Prinsengracht`,
     },
     {
-      id: `prop-4`,
+      id: `prop-5`,
       caption: `Nice, cozy, warm big bed apartment`,
     },
   ];
 
-  const onClick = () => {};
-  return <Main
-    placeCardsInfo={placeCardsInfo}
-    onClick={onClick}
-  />;
-};
+  const tree = renderer
+    .create(<Main
+      placeCardsInfo={placeCardsInfo}
+    />)
+    .toJSON();
 
-export default App;
+  expect(tree).toMatchSnapshot();
+});

@@ -127,7 +127,7 @@ export default class Main extends Component {
             </div>
           </div>
           <h2 className="place-card__name">
-            <a href="#">{item.caption}</a>
+            <a href="#" onClick={this.props.onClick}>{item.caption}</a>
           </h2>
           <p className="place-card__type">Apartment</p>
         </div>
@@ -140,5 +140,6 @@ Main.propTypes = {
   placeCardsInfo: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
     caption: PropTypes.string.isRequired,
-  })).isRequired
+  })).isRequired,
+  onClick: PropTypes.func
 };
