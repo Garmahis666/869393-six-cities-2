@@ -86,7 +86,7 @@ export default class Main extends Component {
                   <li className="places__option" tabIndex="0">Top rated first</li>
                 </ul>
               </form>
-              <PlacesList key="PlacesList" placeCardsInfo={this.props.placeCardsInfo} onClick={this.props.onClick} onPlaceCardMouseOver={this.props.onPlaceCardMouseOver}/>
+              <PlacesList placeCardsInfo={this.props.placeCardsInfo} onClick={this.props.onClick} onPlaceCardMouseOver={this.props.onPlaceCardMouseOver}/>
             </section>
             <div className="cities__right-section">
               <section className="cities__map map"/>
@@ -105,7 +105,6 @@ Main.propTypes = {
     caption: PropTypes.string.isRequired,
     imgSrc: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
-    priceCurrency: PropTypes.string.isRequired,
     priceValue: PropTypes.number.isRequired,
     priceText: PropTypes.string.isRequired,
   })).isRequired,

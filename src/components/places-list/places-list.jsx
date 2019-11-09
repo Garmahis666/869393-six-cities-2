@@ -40,7 +40,6 @@ PlacesList.propTypes = {
     caption: PropTypes.string.isRequired,
     imgSrc: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
-    priceCurrency: PropTypes.string.isRequired,
     priceValue: PropTypes.number.isRequired,
     priceText: PropTypes.string.isRequired,
   })).isRequired,

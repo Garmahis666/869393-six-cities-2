@@ -10,7 +10,6 @@ it(`Main correctly renders after relaunch`, () => {
       caption: `Wood and stone place`,
       imgSrc: `img/room.jpg`,
       type: `Private room`,
-      priceCurrency: `€`,
       priceValue: 80,
       priceText: `night`,
     },

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 class PlaceCard extends PureComponent {
   render() {
-    return <article className="cities__place-card place-card" id={this.props.placeCardInfo.id} onMouseOver={this.mouseoverHandler.bind(this)}>
+    return <article className="cities__place-card place-card" id={this.props.placeCardInfo.id} onMouseOver={this.mouseOverHandle.bind(this)}>
       <div className="cities__image-wrapper place-card__image-wrapper">
         <a href="#">
           <img className="place-card__image" src={this.props.placeCardInfo.imgSrc} width="260" height="200" alt="Place image"/>
@@ -12,7 +12,7 @@ class PlaceCard extends PureComponent {
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
           <div className="place-card__price">
-            <b className="place-card__price-value">{this.props.placeCardInfo.priceCurrency}{this.props.placeCardInfo.priceValue}</b>
+            <b className="place-card__price-value">&euro;{this.props.placeCardInfo.priceValue}</b>
             <span className="place-card__price-text">&#47;&nbsp;{this.props.placeCardInfo.priceText}</span>
           </div>
           <button className="place-card__bookmark-button button" type="button">
@@ -36,7 +36,7 @@ class PlaceCard extends PureComponent {
     </article>;
   }
 
-  mouseoverHandler() {
+  mouseOverHandle() {
     if (this.props.onMouseOver) {
       this.props.onMouseOver(this.props.placeCardInfo);
     }
@@ -49,7 +49,6 @@ PlaceCard.propTypes = {
     caption: PropTypes.string.isRequired,
     imgSrc: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
-    priceCurrency: PropTypes.string.isRequired,
     priceValue: PropTypes.number.isRequired,
     priceText: PropTypes.string.isRequired,
   }),

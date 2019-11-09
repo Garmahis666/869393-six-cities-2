@@ -4,8 +4,7 @@ import offers from './../../mocks/offers.js';
 
 const App = () => {
   return <section>
-    <Main
-      placeCardsInfo={offers} />
+    <Main placeCardsInfo={offers} />
   </section>;
 };
 
