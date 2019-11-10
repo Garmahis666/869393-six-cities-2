@@ -5,20 +5,23 @@ import Main from './main';
 
 Enzyme.configure({adapter: new Adapter()});
 
-it(`App is correctly rendered after relaunch`, () => {
-  const placeCardsInfo = [
+it(`Main is correctly rendered after relaunch`, () => {
+  const testCard = [
     {
       id: `prop-1`,
       caption: `Beautiful & luxurious apartment at great location`,
-    },
+      imgSrc: `img/apartment-01.jpg`,
+      type: `Aparment`,
+      priceValue: 120,
+      priceText: `night`,
+    }
   ];
 
-  const onClick = jest.fn();
-
+  const clickHandler = jest.fn();
   const app = shallow(<Main
-    placeCardsInfo={placeCardsInfo}
-    onClick={onClick} />);
-  const card = app.find(`.place-card__name > a`);
-  card.simulate(`click`);
-  expect(onClick).toHaveBeenCalledTimes(1);
+    placeCardsInfo={testCard}
+    onClick={clickHandler} />);
+  const anchor = app.find(`PlacesList`).dive().find(`PlaceCard`).dive().find(`.place-card__name > a`);
+  anchor.simulate(`click`);
+  expect(clickHandler).toHaveBeenCalledTimes(1);
 });
