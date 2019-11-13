@@ -36,12 +36,24 @@ class PlacesList extends Component {
 
 PlacesList.propTypes = {
   placeCardsInfo: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     caption: PropTypes.string.isRequired,
     imgSrc: PropTypes.string.isRequired,
+    imgGallery: PropTypes.arrayOf(PropTypes.string),
     type: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    premium: PropTypes.bool.isRequired,
+    rating: PropTypes.number.isRequired,
+    bedrooms: PropTypes.number.isRequired,
+    maxAdults: PropTypes.number.isRequired,
+    domestic: PropTypes.arrayOf(PropTypes.string),
+    owner: PropTypes.exact({
+      id: PropTypes.number,
+      imgAvatar: PropTypes.string,
+      name: PropTypes.string,
+      isSuper: PropTypes.bool,
+    }),
     priceValue: PropTypes.number.isRequired,
-    priceText: PropTypes.string.isRequired,
   })).isRequired,
   onClick: PropTypes.func,
 };

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 class PlaceCard extends PureComponent {
   render() {
-    return <article className="cities__place-card place-card" id={this.props.placeCardInfo.id} onMouseOver={this.mouseOverHandle.bind(this)}>
+    return <article className="cities__place-card place-card" id={this.props.placeCardInfo.id} onMouseOver={this.props.placeCardInfo.id}>
       <div className="cities__image-wrapper place-card__image-wrapper">
         <a href="#">
           <img className="place-card__image" src={this.props.placeCardInfo.imgSrc} width="260" height="200" alt="Place image"/>
@@ -13,7 +13,7 @@ class PlaceCard extends PureComponent {
         <div className="place-card__price-wrapper">
           <div className="place-card__price">
             <b className="place-card__price-value">&euro;{this.props.placeCardInfo.priceValue}</b>
-            <span className="place-card__price-text">&#47;&nbsp;{this.props.placeCardInfo.priceText}</span>
+            <span className="place-card__price-text">&#47;&nbsp;night</span>
           </div>
           <button className="place-card__bookmark-button button" type="button">
             <svg className="place-card__bookmark-icon" width="18" height="19">
@@ -45,12 +45,24 @@ class PlaceCard extends PureComponent {
 
 PlaceCard.propTypes = {
   placeCardInfo: PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     caption: PropTypes.string.isRequired,
     imgSrc: PropTypes.string.isRequired,
+    imgGallery: PropTypes.arrayOf(PropTypes.string),
     type: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    premium: PropTypes.bool.isRequired,
+    rating: PropTypes.number.isRequired,
+    bedrooms: PropTypes.number.isRequired,
+    maxAdults: PropTypes.number.isRequired,
+    domestic: PropTypes.arrayOf(PropTypes.string),
+    owner: PropTypes.exact({
+      id: PropTypes.number,
+      imgAvatar: PropTypes.string,
+      name: PropTypes.string,
+      isSuper: PropTypes.bool,
+    }),
     priceValue: PropTypes.number.isRequired,
-    priceText: PropTypes.string.isRequired,
   }),
   onClick: PropTypes.func,
   onMouseOver: PropTypes.func,
