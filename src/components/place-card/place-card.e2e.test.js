@@ -35,7 +35,7 @@ it(`PlaceCard is correctly rendered after relaunch`, () => {
 
   const app = shallow(<PlaceCard placeCardInfo={testCard} onMouseOver={mouseOverHandler} />);
 
-  const anchor = app.find(`#1`);
+  const anchor = app.find(`.place-card`);
   anchor.simulate(`mouseover`);
   expect(mouseOverHandler).toHaveBeenCalledWith(testCard);
 });
