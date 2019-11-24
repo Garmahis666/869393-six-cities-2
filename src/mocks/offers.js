@@ -6,6 +6,10 @@ const offers = [
     type: `Aparment`,
     priceValue: 120,
     priceText: `night`,
+    coordinates: {
+      y: 52.3909553943508,
+      x: 4.85309666406198
+    },
   },
   {
     id: `prop-2`,
@@ -14,6 +18,10 @@ const offers = [
     type: `Private room`,
     priceValue: 200,
     priceText: `night`,
+    coordinates: {
+      y: 52.369553943508,
+      x: 4.85309666406198
+    },
   },
   {
     id: `prop-3`,
@@ -22,6 +30,10 @@ const offers = [
     type: `Aparment`,
     priceValue: 150,
     priceText: `night`,
+    coordinates: {
+      y: 52.3909553943508,
+      x: 4.929309666406198
+    },
   },
   {
     id: `prop-4`,
@@ -30,6 +42,10 @@ const offers = [
     type: `Aparment`,
     priceValue: 180,
     priceText: `night`,
+    coordinates: {
+      y: 52.3809553943508,
+      x: 4.939309666406198
+    },
   },
 ];
 
