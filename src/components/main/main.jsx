@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import PlacesList from './../places-list/places-list.jsx';
+import Map from './../map/map.jsx';
 
 export default class Main extends Component {
   render() {
@@ -89,7 +90,7 @@ export default class Main extends Component {
               <PlacesList placeCardsInfo={this.props.placeCardsInfo} onClick={this.props.onClick} onPlaceCardMouseOver={this.props.onPlaceCardMouseOver}/>
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map"/>
+              <Map placeCardInfo={this.props.placeCardsInfo} />
             </div>
           </div>
         </div>
@@ -107,6 +108,10 @@ Main.propTypes = {
     type: PropTypes.string.isRequired,
     priceValue: PropTypes.number.isRequired,
     priceText: PropTypes.string.isRequired,
+    coordinates: PropTypes.shape({
+      y: PropTypes.number.isRequired,
+      x: PropTypes.number.isRequired,
+    }),
   })).isRequired,
   onClick: PropTypes.func,
   onPlaceCardMouseOver: PropTypes.func,
